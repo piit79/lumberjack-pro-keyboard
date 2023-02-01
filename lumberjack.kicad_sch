@@ -5393,7 +5393,7 @@
     (uuid 00000000-0000-0000-0000-0000601e2e5d)
     (property "Reference" "J1" (id 0) (at 31.9278 23.6982 0))
     (property "Value" "USB" (id 1) (at 31.9278 26.0096 0))
-    (property "Footprint" "lumberjack:USB_Hybrid" (id 2) (at 33.02 45.72 0)
+    (property "Footprint" "lumberjack:USB_C_GCT_USB4085-offset-pads-compat" (id 2) (at 33.02 45.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" (id 3) (at 33.02 45.72 0)
@@ -6264,7 +6264,7 @@
       (reference "H11") (unit 1) (value "M2") (footprint "lumberjack:MountingHole_M2")
     )
     (path "/00000000-0000-0000-0000-0000601e2e5d"
-      (reference "J1") (unit 1) (value "USB") (footprint "lumberjack:USB_Hybrid")
+      (reference "J1") (unit 1) (value "USB") (footprint "lumberjack:USB_C_GCT_USB4085-offset-pads-compat")
     )
     (path "/00000000-0000-0000-0000-00005c3f2fd0"
       (reference "J2") (unit 1) (value "AVR_ISP_6") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical")
