@@ -6,3 +6,4 @@ sym-lib-table
 *-bak
 .DS_Store
 *-backups
+*.lck
