@@ -1,0 +1,120 @@
+(footprint "Lumberjack-Pro-Frood"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 2.975 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "70cf48a0-fef8-4e2c-878c-bffc36ca36ee")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Lumberjack-Pro-Frood"
+		(at 0 -2.05 0)
+		(layer "F.Fab")
+		(uuid "9794cde7-22b3-4bff-891f-48da02112169")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" "Lumberjack-Pro-Frood"
+		(at 0 4.6 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2d1b6713-2804-4806-971e-a2c85c11ae9f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at -3.2 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5a50bfd6-471d-4317-8ed8-161bc190406b")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at -3.2 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9e898067-b8ed-41f7-9e7f-0e39643bd237")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -3.5 0.01)
+		(end 3.2 0)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.Mask")
+		(uuid "febc0653-5e0a-4b5b-bf7b-1f099693fe0a")
+	)
+	(fp_text user "LUMBER"
+		(at -3.3 -0.6 0)
+		(layer "F.Mask")
+		(uuid "1b9f5126-4160-451e-a897-23aa22e4720e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "JACK"
+		(at -3.39 1.2 0)
+		(layer "F.Mask")
+		(uuid "39b14b9e-1ad6-4b95-92c2-d406a1118e60")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.25)
+			)
+		)
+	)
+	(fp_text user "FROOD"
+		(at 3.55 1.7 0)
+		(layer "F.Mask")
+		(uuid "69ef8e6a-f31c-4faa-baad-fd875f7cf6c4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "PRO"
+		(at 3.5 0 0)
+		(layer "F.Mask")
+		(uuid "b8aee4a0-2d26-4a85-8b19-7f4825145a23")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.25)
+			)
+		)
+	)
+)
