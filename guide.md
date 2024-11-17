@@ -1,6 +1,8 @@
-# Lumberjack - Kit assembly guide
+# Lumberjack Pro - Kit assembly guide
 
-This assembly guide will guide you through putting together your Lumberjack keyboard PCB kit. The process is quite simple with only basic soldering experience.
+This assembly guide will guide you through putting together your Lumberjack Pro keyboard PCB kit. The process is quite simple with only basic soldering experience required.
+
+⚠️ Please note this guide was adapted for the Lumberjack Pro from the original build guide and some pictures have not been update yet.
 
 ## Before starting
 
@@ -8,21 +10,36 @@ This assembly guide will guide you through putting together your Lumberjack keyb
     * Soldering iron
     * Solder
     * Flush cutters
-    * 60 MX key switches
+    * 60-61 MX key switches
 * Check that you have all the components. See [BOM](BOM.md)
-    * Keep the resistors in the paper reel so that it is easy to tell them apart based upon how many there are.
-    * Do not confuse the 2 zener diodes with the 60 1N4148 diodes, they look almost identical but perform quite different functions.
 * If you are not used to soldering, learn how to solder components.
     * https://learn.adafruit.com/adafruit-guide-excellent-soldering/tools
 
 ## Soldering
 
-### USB connector (J1)
-First you will solder the USB connector to the **underside** of the PCB. All other components go on the top.
+### Controller considerations
 
-![USB](images/guide/usb_underside.jpg)
+The PCB supports either the Frood controller (wired only), or the nice!nano wireless controller.
 
-Due to the small size of the pins on the connector you will need to use a different soldering technique called drag soldering. You will need a separate supply of flux to do this, either liquid flux or a flux pen.
+#### Frood
+
+When using the Frood, install the on-board USB-C socket that is positioned to fit many cases, or a USB-C daughterboard.
+
+#### nice!nano
+
+* You can make your Lumberjack Pro wireless using teh nice!nano controller
+* A 1S (3.7 V) Li-Po battery can be connected to the JST socket pads marked "B+/B-"
+  * There is currently no power switch on the PCB, so the controller will be permanently powered. However, this is not really an issue because the controller is very power efficient and enters a sleep mode after a short while, and you can use a sizeable battery with the Lumberjack Pro
+  * The battery can only be charged via the USB-C socket on the nice!nano, which might be a bit difficult due to the position of the controller
+* ⚠️ **DO NOT** fit the USB-C socket or a daughterboard when using the nice!nano with a battery! ⚠️
+  * nice!nano doesn't have the USB data lines broken out, so the wired communication will not work (although the controller itself can be powered from the USB-C socket or the daughterboard)
+  * ⚠️ The battery connected to the JST socket pads would be connected directly to the USB 5 V supply and could be overcharged easily and quickly, potentially leading to a fire! ⚠️
+
+### USB socket (J1)
+
+First you will solder the USB connector to the **underside** of the PCB. All other components (except the JST sockets) go on the top.
+
+Due to the small size of the pins on the connector you might want to use a different soldering technique called drag soldering. You will need a separate supply of flux to do this, either liquid flux or a flux pen. However, with a suitable soldering iron tip the pins can be soldered traditionally as well.
 
 * Insert the USB connector into the board.
 * Flip the board over and solder one of the legs into place.
@@ -53,180 +70,41 @@ If you want to use a daughterboard instead of a USB connector, there are footpri
 
 Note: A JST connector is not included in the Lumberjack kit, the SMD variant is part JST-SR-4 and for THT it is S4B-ZR.
 
-### Zener diodes (D61,62)
-
-Solder the Zener diodes D61 and D62 (D66 and D67 in older PCB revisions).
-
-Diodes are a polarized component and therefore take care of direction, the black line on the diode is the cathode and goes in the square pad on PCB.
-
-Do not get these confused with the 1N4148 diodes.
-
-![Zener diodes](images/guide/zener.jpg)
-
-### Resistors (R1,2,3,4,7,8)
-
-Solder the resistors.
-
-Ensure you use the correct size resistor for the correct position. You can identify which resistors are which due to the number of resistors of each type in the kit or by matching the colored bands on the resistors.
-
-* R1,7,8: 1.5kΩ Brown, green, black, brown, red
-* R2,3: 75Ω Violet, green, black, gold, red
-* R4: 10kΩ Brown, black, black, red, red
-
-![Resistors](images/guide/resistors.jpg)
-
 ### Resistors for USB-C (R5,6)
 
 If you are using a UCB-C connector you will need to solder these extra two resistors. They are marked in the kit with a black dot on the paper to help distingish them from the other resistors.
 
 * R5,6: 5.1kΩ Green, brown, black, brown, red
 
-![USB-C resistors](images/guide/resistors-usbc.jpg)
+### Hotswap sockets
 
-### Diodes 1N4148 (D1-60)
+* To solder the hotswap sockets, first put a healthy amount of solder on one of the pads of each socket footprint
+* Then put the sockets into place over the solder
+* Reheat the solder under the socket contact and gently push the socket down into the molten solder using a pair of tweezers
+* To avoid creating a cold joint, keep heating for a second maintaining contact with the socket contact, then keep holding the socket in place while the solder solidifies. Avoid blowing on the solder to speed up the cooling
+* Add solder to the other contact of each hotswap socket. Make sure to use enough heat so that the solder flows into the joint instead of just inside the contact
+
+### Diodes 1N4148 (D1-61)
 
 Solder the diodes.
 
 Diodes are a polarized component and therefore take care of direction, the black line on the diode is the cathode and goes in the square pad on PCB.
 
-![1N4148 diodes](images/guide/diodes.jpg)
-
-### Crystal (Y1)
-
-Solder the crystal.
-
-![Crystal](images/guide/crystal.jpg)
-
-### Capacitors (C1,2,4,5)
-
-Solder the small brown (or yellow) 22pF capacitors C1 and C2 (marked 22).
-
-Solder the small yellow 100nF capacitors C4 and C5 (marked 104).
-
-Do not get the two sets of capacitors confused. Depending on the pitch of the capacitors, you might need to bend the legs so that they fit into the pads.
-
-![Capacitors](images/guide/capacitors.jpg)
-
-Leave C3 until later as it is tall and will stop the PCB from laying flat making the other steps harder.
-
-### LEDs (LED1,2)
-
-Solder the LEDs.
-
-LEDs are a polarized component and therefore take care of direction, the short leg is the cathode and goes in the square pad on PCB.
-
-![LEDs](images/guide/led.jpg)
-
-### IC socket (U1)
-
-Solder on the IC socket. 
-
-The IC socket mounts a polarized component, check the notch on silkscreen and IC Socket.
-
-![IC Socket](images/guide/ic-socket.jpg)
-
-Do not insert microcontroller into the socket before soldering the socket to the PCB.
-
-### Electrolytic capacitor (C3)
-
-Electrolytic capacitor is a polarized component, the short leg is the cathode and goes in the circular (left) pad on PCB (nearest the C3 marking).
-
-The soldermask around the pads can cause confusion as to which pad is which. The circular pad has a white square pattern around it making it look like it is square, so be careful and double check. The capacitor should be orientated so that the side with the line on it is on the left.
-
-![Capacitor](images/guide/capacitor.jpg)
-
-To fit under the component cover, ensure that your capacitor body is less than 10mm tall.
-
-If your capacitor is taller than 10mm and will not fit under the component cover, you can alternatively bend the legs and lie the capacitor down into the empty space on the PCB above the pad.
-
-![Tall capacitor](images/guide/capacitor-tall.jpg)
-
-### Resettable fuse (F1)
-
-Solder on the resettable fuse.
-
-After soldering, bend the fuse over to that it lays flat on the PCB.
-
-![Fuse](images/guide/fuse.jpg)
-
-If you have placed the capacitor into the empty space that the fuse would usually occupy, straighten the legs of the fuse with pliers before soldering it so that it can be soldered lower into the PCB.
-
-### Tactile switches (SW1,2)
+### Tactile switch (SW1)
 
 Push the switches into the PCB and solder the legs.
-
-![Push switches](images/guide/switches.jpg)
-
-### ISP header (J2)
-
-Used for programming the microprocessor with the bootloader directly. If your MCU is already programmed you can skip adding this header if you want.
-
-![ISP header](images/guide/isp-header.jpg)
-
-### ATMEGA328P (U1)
-
-Insert ATMEGA328P into IC Socket.
-
-You will probably need to carefully bend the legs to make it fit into the socket. Take care and gently bend them against a flat surface until they are spaced correctly for the socket.
-
-Ensure that you insert it in the correct orientation, the semicircular mark should match that of the silkscreen.
-
-Take care that all the legs go into the socket correctly and do not get accidently bend outside of the socket. The end legs are small and fragile, repeated bending of the legs can cause them to break off.
-
-![ATMEGA328P](images/guide/atmega328p.jpg)
-
-### Check list
-
-Before connecting the board to your computer, a few things to double check just to be safe:
-
-* Take a close look at the USB connector pins and visually check there is no short between the VCC and GND pins. If you have a multimeter, now might be a good time to use it.
-* Check the orientation of polarized components (ATMEGA328p, diode, electrolytic capacitor).
-* Double check the correct resistor values are in the correct locations.
-
-## Software
-
-Note: If you got your Lumberjack as a kit, the microprocesor is already flashed with a bootloader and firmware, and you can skip this and the firmware steps.
-
-### Bootloader
-
-A bootloader is a piece of software on the microprocessor which can be used to flash firmware onto the microprocessor and to pass execution control to that firmware.
-
-You will need to flash the microprocessor with a bootloader. To do this you will need another device which can be connected to the ISP headers and used to flash the bootloader to the chip. Since Lumberjack is the same as the Plaid, we can use the same bootloader.
-
-* Download the [Plaid bootloader](https://github.com/hsgw/USBaspLoader/tree/plaid) and follow the instructions to compile the bootloader.
-* Follow the [QMK ISP flashing guide](https://docs.qmk.fm/#/isp_flashing_guide) to get the bootloader onto the chip.
-
-Don't forget to set the fuses: low `0xd7`, high `0xd0`, extended `0xfc`.
-
-There is a pre-compiled bootloader + firmware in the [bootloader directory](bootloader) along with an example `avrdude` command for flashing it.
 
 ### Firmware
 
 Follow the [QMK firmware instructions](https://docs.qmk.fm/#/flashing) to build and flash the firmware.
 
-`qmk flash -kb peej/lumberjack`
-
-To put the board into bootloader mode so it is ready to recieve firmware, press and hold the BOOT button (SW2) while pressing and releasing the RESET button (SW1). The board will now be detected as an USBasp device and can have the firmware flashed via the USB port.
-
-Pressing the RESET button (SW1) on its own will restart the microprocessor. Once flashed with firmware it is neccessary to reset the keyboard so as to return control to the new firmware.
-
-Note that due to the BOOT button (SW2) sharing a pin with column 3, when pressed the keys in that column will also activate. This is expected behavour but can be a little annoying or confusing if you are not expecting it.
-
-### Can't recognize bootloader
-
-* Check components and soldering near ATMEGA328p.
-    * Direction of ATMEGA328p
-    * BOOT SW and RESET SW
-    * USB connector
-    * R1, R2, R3, D66, D67
-* Try different USB cable, PC, USB hub
-    * If you connect via USB hub, try connecting directly.
+`qmk compile -kb 42keebs/lumberjack_pro -km vial`
 
 ### Check list
 
 Now the board should be fully functional, so check that everything works before adding the switches.
 
-Plug in the PCB and use a pair of tweazers or a piece of wire to check each keyswitch pad triggers a keypress.
+Plug in the PCB and use a pair of tweezers or a piece of wire to check each keyswitch pad triggers a keypress.
 
 ## Switches
 
@@ -248,13 +126,11 @@ If you are using a 2u key on the right hand side, you will also need to trim dow
 
 ### Insert switches
 
-Insert the switches into the PCB and solder the pins of each switch.
+Insert the switches into the hotswap sockets in the PCB.
 
-If you are using a plate, insert the switches into the plate first and then insert into the PCB.
+If you are using a plate, insert the switches through the plate.
 
-Ensure that the switch is fully inserted and sitting flush with the PCB before soldering.
-
-Note also that the switch at the 'Q' position is upsidedown so that the switch pins do not interfere with the case standoffs.
+Note also that the switch at the 'Q' position is upside down so that the switch pins do not interfere with the case standoff. So are switches in the Esc/Grave and 1 positions to avoid interference with the USB-C socket.
 
 ## Component cover
 
@@ -266,6 +142,6 @@ Do not overtighten the screws as this could crack the acrylic.
 
 When fixing the PCB to your case you will only use the center, the left and the right screw holes. Depending on your case design, the PCB will be supported by the other standoffs.
 
-## End
+## The End
 
 Congratulations, your build is complete.
